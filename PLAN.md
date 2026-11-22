@@ -4,23 +4,16 @@ Each round completes one feature or repair. Future items are planned, not implem
 
 ## Current round
 
-file-browser
+continue-implementation
 
 ## Roadmap
 
-### file-browser — Directory file browser with share link generation
+### continue-implementation — Continue implementation and resolve known failures
 
-Status: planned
+Status: in_progress
 
 Acceptance:
-- Backend serves directory listing via GET /api/files?path=/path
-- Frontend renders file tree from API response
-- Share link includes full folder context
-- Tests pass for endpoint
-
-Implementation: `backend/main.py`, `frontend/src/FileBrowser.tsx`
-
-Tests: `backend/tests/test_files.py`
+- Run checks, fix failures, and implement the next planned feature
 
 ---
 

@@ -35,7 +35,17 @@ def _list_dir_recursive(dir_path: Path, max_depth: int = 3, current_depth: int =
 @app.get("/api/files", tags=["file-browser"])
 def list_files(path: str = Query(..., description="Path to directory to list")):
     """List directory contents."""
-    target = Path(path).resolve()
+    # Resolve and validate path to prevent directory traversal
+    resolved = Path(path).resolve()
+    base = Path(".").resolve()
+    
+    # Ensure resolved path is within the base directory
+    try:
+        resolved.relative_to(base)
+    except ValueError:
+        raise HTTPException(status_code=400, detail=f"Path outside allowed directory: {path}")
+    
+    target = resolved
     
     if not target.exists():
         raise HTTPException(status_code=404, detail=f"Path not found: {path}")

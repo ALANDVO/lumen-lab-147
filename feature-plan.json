@@ -1,1 +1,16 @@
-{"schema_version":1,"current_feature":"file-browser","features":[{"id":"file-browser","title":"Directory file browser with share link generation","status":"planned","acceptance":["Backend serves directory listing via GET /api/files?path=/path","Frontend renders file tree from API response","Share link includes full folder context","Tests pass for endpoint"],"implementation":["backend/main.py","frontend/src/FileBrowser.tsx"],"tests":["backend/tests/test_files.py"]}],"notes":"First round: skeleton + file browser endpoint. Future rounds will add share link generation, annotations, and full end-to-end workflow."}
+{
+  "schema_version": 1,
+  "current_feature": "continue-implementation",
+  "features": [
+    {
+      "id": "continue-implementation",
+      "title": "Continue implementation and resolve known failures",
+      "status": "in_progress",
+      "acceptance": [
+        "Run checks, fix failures, and implement the next planned feature"
+      ],
+      "implementation": [],
+      "tests": []
+    }
+  ]
+}
