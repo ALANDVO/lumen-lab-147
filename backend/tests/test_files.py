@@ -57,3 +57,11 @@ def test_list_files_include_subdirectory():
     assert main_entry is not None
     assert main_entry["is_file"] is True
     assert main_entry["is_dir"] is False
+
+def test_list_files_health_endpoint():
+    """Test the health check endpoint returns ok."""
+    response = client.get("/api/health")
+    assert response.status_code == 200
+    data = response.json()
+    assert data["status"] == "ok"
+    assert "message" in data
